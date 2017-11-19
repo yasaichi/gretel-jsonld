@@ -1,0 +1,16 @@
+inherit_from:
+  - https://raw.githubusercontent.com/rails/rails/master/.rubocop.yml
+
+AllCops:
+  Exclude:
+    - gretel-jsonld.gemspec
+    - spec/dummy/**/*
+
+LineLength:
+  Max: 100
+
+Style/Documentation:
+  Enabled: false
+
+Style/IndentationConsistency:
+  EnforcedStyle: normal
