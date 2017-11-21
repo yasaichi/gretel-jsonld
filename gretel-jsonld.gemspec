@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Gretel::Jsonld::VERSION
   s.authors     = ["yasaichi"]
   s.email       = ["yasaichi@users.noreply.github.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Gretel::Jsonld."
-  s.description = "TODO: Description of Gretel::Jsonld."
+  s.homepage    = "https://github.com/yasaichi/gretel-jsonld"
+  s.summary     = "Gretel extension for supporting JSON-LD breadcrumbs"
+  s.description = "gretel-json-ld enables gretel gem to handle JSON-LD based breadcrumbs."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
