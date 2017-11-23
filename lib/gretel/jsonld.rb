@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-module Gretel
-  module Jsonld
-    # Your code goes here...
-  end
+require "gretel/jsonld/version"
+
+if defined?(Rails)
+  require "gretel/jsonld/railtie"
+else
+  require "gretel/jsonld/view_helpers"
 end
