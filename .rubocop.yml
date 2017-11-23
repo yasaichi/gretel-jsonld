@@ -6,11 +6,11 @@ AllCops:
     - gretel-jsonld.gemspec
     - spec/dummy/**/*
 
-LineLength:
+Metrics/LineLength:
   Max: 100
 
 Style/Documentation:
   Enabled: false
 
-Style/IndentationConsistency:
+Layout/IndentationConsistency:
   EnforcedStyle: normal
