@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "gretel-json-ld enables gretel gem to handle JSON-LD based breadcrumbs."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["CHANGELOG.md", "lib/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "gretel", ">= 3.0.0"
 
