@@ -7,7 +7,7 @@ RSpec.describe Gretel::Jsonld::ViewHelpers, type: :helper do
     subject { helper.jsonld_breadcrumbs(link_current_to_request_path: false) }
 
     context "when #breadcrumb is not called in advance" do
-      it { is_expected.to eq "" }
+      its(:to_s) { is_expected.to eq "" }
     end
 
     context "when #breadcrumb is called in advance" do
@@ -38,7 +38,7 @@ RSpec.describe Gretel::Jsonld::ViewHelpers, type: :helper do
         )
       end
 
-      it { is_expected.to eq %(<script type="application/ld+json">#{expectation}</script>) }
+      its(:to_s) { is_expected.to eq %(<script type="application/ld+json">#{expectation}</script>) }
     end
   end
 end
