@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ["yasaichi@users.noreply.github.com"]
   s.homepage    = "https://github.com/yasaichi/gretel-jsonld"
   s.summary     = "Gretel extension for supporting JSON-LD breadcrumbs"
-  s.description = "gretel-json-ld enables gretel gem to handle JSON-LD based breadcrumbs."
+  s.description = "gretel-jsonld enables gretel gem to handle JSON-LD based breadcrumbs."
   s.license     = "MIT"
 
   s.files = Dir["CHANGELOG.md", "lib/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
