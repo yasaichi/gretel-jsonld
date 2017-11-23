@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "gretel", ">= 3.0.0"
 
+  s.add_development_dependency "appraisal"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "reek"
   s.add_development_dependency "rspec-rails"
