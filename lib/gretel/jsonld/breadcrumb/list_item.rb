@@ -12,7 +12,8 @@ module Gretel
           @position = position
         end
 
-        def to_json(*args)
+        # NOTE: Override #as_json to cope with Rails 4.0 or former
+        def as_json(options = nil)
           {
             "@type": "ListItem",
             position: @position,
@@ -20,7 +21,11 @@ module Gretel
               "@id": @id,
               name: @name,
             }
-          }.to_json(*args)
+          }.as_json(options)
+        end
+
+        def to_json(*args)
+          as_json.to_json(*args)
         end
       end
     end

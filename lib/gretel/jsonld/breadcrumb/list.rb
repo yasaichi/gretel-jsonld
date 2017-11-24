@@ -11,12 +11,17 @@ module Gretel
           @link_collection = link_collection
         end
 
-        def to_json(*args)
+        # NOTE: Override #as_json to cope with Rails 4.0 or former
+        def as_json(options = nil)
           {
             "@context": "http://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: item_list_element,
-          }.to_json(*args)
+          }.as_json(options)
+        end
+
+        def to_json(*args)
+          as_json.to_json(*args)
         end
 
         private
