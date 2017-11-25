@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require "json"
+require "active_support"
+require "active_support/core_ext/string/output_safety"
 require "gretel/jsonld/breadcrumb/list"
 
 module Gretel
