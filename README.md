@@ -1,4 +1,9 @@
 # Gretel::JSONLD
+[![Gem Version](https://badge.fury.io/rb/gretel-jsonld.svg)](http://badge.fury.io/rb/gretel-jsonld)
+[![Build Status](https://travis-ci.org/yasaichi/gretel-jsonld.svg?branch=master)](https://travis-ci.org/yasaichi/gretel-jsonld)
+[![Code Climate](https://api.codeclimate.com/v1/badges/fc3fd5037eb200bedbf5/maintainability)](https://codeclimate.com/github/yasaichi/gretel-jsonld/maintainability)
+[![Test Coverage](https://codeclimate.com/github/yasaichi/gretel-jsonld/badges/coverage.svg)](https://codeclimate.com/github/yasaichi/gretel-jsonld/coverage)
+
 Short description and motivation.
 
 ## Usage
