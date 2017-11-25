@@ -5,7 +5,7 @@ require "active_support/lazy_load_hooks"
 require "rails/railtie"
 
 module Gretel
-  module Jsonld
+  module JSONLD
     class Railtie < ::Rails::Railtie
       initializer "gretel.jsonld" do
         ::ActiveSupport.on_load(:action_view) do

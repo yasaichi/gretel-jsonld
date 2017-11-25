@@ -6,7 +6,7 @@ require "active_support/core_ext/string/output_safety"
 require "gretel/jsonld/breadcrumb/list"
 
 module Gretel
-  module Jsonld
+  module JSONLD
     class Renderer
       def initialize(view_context)
         @view_context = view_context
@@ -17,7 +17,7 @@ module Gretel
 
         @view_context.content_tag(
           :script,
-          JSON.generate(::Gretel::Jsonld::Breadcrumb::List.new(link_collection)).html_safe,
+          JSON.generate(::Gretel::JSONLD::Breadcrumb::List.new(link_collection)).html_safe,
           type: "application/ld+json",
         )
       end

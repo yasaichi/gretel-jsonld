@@ -5,7 +5,7 @@ require "gretel"
 require "gretel/jsonld/renderer"
 
 module Gretel
-  module Jsonld
+  module JSONLD
     module ViewHelpers
       def jsonld_breadcrumbs(options = {})
         gretel_jsonld_renderer.render(breadcrumbs(options))
@@ -14,10 +14,10 @@ module Gretel
       private
 
       def gretel_jsonld_renderer
-        @_gretel_jsonld_renderer ||= ::Gretel::Jsonld::Renderer.new(self)
+        @_gretel_jsonld_renderer ||= ::Gretel::JSONLD::Renderer.new(self)
       end
     end
   end
 end
 
-ActionView::Base.include(Gretel::Jsonld::ViewHelpers)
+ActionView::Base.include(Gretel::JSONLD::ViewHelpers)

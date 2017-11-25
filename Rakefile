@@ -10,7 +10,7 @@ require "rdoc/task"
 
 RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = "rdoc"
-  rdoc.title    = "Gretel::Jsonld"
+  rdoc.title    = "Gretel::JSONLD"
   rdoc.options << "--line-numbers"
   rdoc.rdoc_files.include("README.md")
   rdoc.rdoc_files.include("lib/**/*.rb")

@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe Gretel::Jsonld::ViewHelpers, type: :helper do
+RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
   describe "#jsonld_breadcrumbs" do
     subject { helper.jsonld_breadcrumbs(link_current_to_request_path: false) }
 

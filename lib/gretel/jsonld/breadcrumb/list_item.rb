@@ -5,7 +5,7 @@ require "active_support"
 require "active_support/json/encoding"
 
 module Gretel
-  module Jsonld
+  module JSONLD
     module Breadcrumb
       class ListItem
         def initialize(id:, name:, position:)
