@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "Gretel extension for supporting JSON-LD breadcrumbs"
   s.description = "gretel-jsonld enables gretel gem to handle JSON-LD based breadcrumbs."
   s.license     = "MIT"
+  s.required_ruby_version = ">= 2.2.2"
 
   s.files = Dir["CHANGELOG.md", "lib/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
