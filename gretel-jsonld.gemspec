@@ -6,7 +6,7 @@ require "gretel/jsonld/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "gretel-jsonld"
-  s.version     = Gretel::Jsonld::VERSION
+  s.version     = Gretel::JSONLD::VERSION
   s.authors     = ["yasaichi"]
   s.email       = ["yasaichi@users.noreply.github.com"]
   s.homepage    = "https://github.com/yasaichi/gretel-jsonld"

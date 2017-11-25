@@ -1,4 +1,4 @@
-# Gretel::Jsonld
+# Gretel::JSONLD
 Short description and motivation.
 
 ## Usage

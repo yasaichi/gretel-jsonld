@@ -6,7 +6,7 @@ require "active_support/json/encoding"
 require "gretel/jsonld/breadcrumb/list_item"
 
 module Gretel
-  module Jsonld
+  module JSONLD
     module Breadcrumb
       class List
         def initialize(link_collection)
@@ -30,7 +30,7 @@ module Gretel
 
         def item_list_element
           @link_collection.map.with_index(1) do |link, index|
-            ::Gretel::Jsonld::Breadcrumb::ListItem.new(
+            ::Gretel::JSONLD::Breadcrumb::ListItem.new(
               id: link.url,
               name: link.text,
               position: index,
