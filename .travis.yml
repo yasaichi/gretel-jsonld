@@ -21,3 +21,7 @@ before_script:
   - ./cc-test-reporter before-build
 after_script:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+notifications:
+  email: false
+  slack:
+    secure: "fETDPOl+tLkDEZIKkvFqKFTpYXGdj/zYaZgrDr8cOPbDhhRfinaArNB3NZho0BvA9cPDqeNJGwYhp6WU9byF5Yme1eB3t/i0pKTwjMNOHnKThBE741QMMykIUEqLi0MeKlBKnn78L/Deb08/dvk7INNXBhDrFL8FCHsH3wycXXtrptvPopRmkyZ7AooVg+y5N7NDWmOTHnVznYizl2C3lJstH+wu1qCdkYBOmWJRZN4xJYAduvUI9yTQSBeAmcc40+dZtSgiD3acN6O+Jz+ILeviPQFc4hWlWmhw8ttws43gSQB1OHF2IsouG3l6t1QqQ/dl3fprOcT5Id+aQyHyjTK9TStIUS8MsDuzsu6wqBd6/Zvv4X4yLM1/muGa7ZLgyaP2ZDExwTX6RT/6qmkRyikHUIvfyW0hh9unUS1FfkkCREJLeEk1Jcudk9vTA64cuNJ7eY9iOi77//TlRUGQx0QKGvRV+jL1fhv6kcBaH9Y8IcvAV15UcjLH8g/2N18MKf0zAfWZBnAsbFXm/W9TTjJVXlPTb4qDmR8vi4nTUzwJnxyGYGGqaNZ35UKViihGXapxkzfCSUW2/qBgLSibK1jOUDx7T+xlGI8vHXA33Wp4lNLBcZdi9FFtVxuyjDIZgnqmNbw39PdGxNJo+wGTeniiMimfGvlfkcLlZHrUeO0="
