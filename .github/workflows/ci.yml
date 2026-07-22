@@ -31,23 +31,30 @@ jobs:
             run: bundle exec rubocop
 
   test:
-    name: ${{ matrix.gemfile }} w/ Ruby v${{ matrix.ruby }}
+    name: Test (Gretel ${{ matrix.gretel }} / Rails ${{ matrix.rails }} / Ruby ${{ matrix.ruby }})
     needs: lint
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
         include:
-          - ruby: "2.5"
-            gemfile: rails_5x
-          - ruby: "3.3"
-            gemfile: rails_6x
-          - ruby: "3.4"
-            gemfile: rails_7x
-          - ruby: "4.0"
-            gemfile: rails_8x
+          - gretel: "3"
+            rails: "5"
+            ruby: "2.5"
+          - gretel: "4"
+            rails: "5"
+            ruby: "2.5"
+          - gretel: "4"
+            rails: "7"
+            ruby: "3.4"
+          - gretel: "5"
+            rails: "6"
+            ruby: "3.3"
+          - gretel: "5"
+            rails: "8"
+            ruby: "4.0"
     env:
-      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
+      BUNDLE_GEMFILE: ${{ format('{0}/gemfiles/gretel_{1}_rails_{2}.gemfile', github.workspace, matrix.gretel, matrix.rails) }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
 
