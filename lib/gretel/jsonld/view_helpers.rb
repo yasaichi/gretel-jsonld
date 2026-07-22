@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require "action_view"
 require "gretel"
 require "gretel/jsonld/renderer"
 
@@ -19,5 +18,3 @@ module Gretel
     end
   end
 end
-
-ActionView::Base.include(Gretel::JSONLD::ViewHelpers)

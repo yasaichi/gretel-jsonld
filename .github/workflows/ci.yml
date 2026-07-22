@@ -20,13 +20,15 @@ jobs:
       matrix:
         include:
           - ruby: "2.5"
-            gemfile: rails_5x
-          - ruby: "3.3"
-            gemfile: rails_6x
+            gemfile: gretel_3_rails_5
+          - ruby: "2.5"
+            gemfile: gretel_4_rails_5
           - ruby: "3.4"
-            gemfile: rails_7x
+            gemfile: gretel_4_rails_7
+          - ruby: "3.3"
+            gemfile: gretel_5_rails_6
           - ruby: "4.0"
-            gemfile: rails_8x
+            gemfile: gretel_5_rails_8
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
     steps:
