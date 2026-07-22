@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "helpers:pinGitHubActionDigests"],
+  "minimumReleaseAge": "7 days",
+  "packageRules": [
+    {
+      "description": "Limit GitHub Action updates to explicitly enabled types",
+      "enabled": false,
+      "matchDepTypes": ["action"],
+      "matchManagers": ["github-actions"]
+    },
+    {
+      "description": "Enable major GitHub Action updates",
+      "enabled": true,
+      "matchDepTypes": ["action"],
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["major"]
+    }
+  ]
+}
