@@ -12,8 +12,27 @@ permissions:
   contents: read
 
 jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+
+      - uses: ruby/setup-ruby@a30dfa457ad68707b8b910ac3a244714b61c0626 # v1.320.0
+        with:
+          ruby-version: ruby
+          bundler-cache: true
+
+      - parallel:
+          - name: Run Reek
+            run: bundle exec reek
+
+          - name: Run RuboCop
+            run: bundle exec rubocop
+
   test:
     name: ${{ matrix.gemfile }} w/ Ruby v${{ matrix.ruby }}
+    needs: lint
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
