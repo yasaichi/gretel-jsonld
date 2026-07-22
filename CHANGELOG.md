@@ -1,4 +1,8 @@
 # CHANGELOG
+## [0.3.0](https://github.com/yasaichi/gretel-jsonld/releases/tag/v0.3.0) (July 22, 2026)
+* [Test against Rails 6 through 8](https://github.com/yasaichi/gretel-jsonld/pull/18)
+* [Drop support for Ruby 2.4 and earlier](https://github.com/yasaichi/gretel-jsonld/pull/16)
+
 ## [0.2.0](https://github.com/yasaichi/gretel-jsonld/releases/tag/v0.2.0) (November 25, 2017)
 * [Write README](https://github.com/yasaichi/gretel-jsonld/pull/7)
 * [Use `JSONLD` as module name instead of `Jsonld`](https://github.com/yasaichi/gretel-jsonld/pull/6)
