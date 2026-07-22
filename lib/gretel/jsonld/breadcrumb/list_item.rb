@@ -18,7 +18,7 @@ module Gretel
             position: @position,
             item: {
               "@id": @id,
-              name: @name,
+              name: @name
             }
           }.to_json(*args)
         end
