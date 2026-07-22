@@ -19,21 +19,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - ruby: 2.3.8
-            gemfile: rails_3x
-            bundler: 1
-          - ruby: 2.3.8
-            gemfile: rails_4x
-            bundler: 1
-          - ruby: 2.3.8
-            gemfile: rails_5x
-            bundler: default
-          - ruby: 2.4.6
-            gemfile: rails_4x
-            bundler: 1
-          - ruby: 2.4.6
-            gemfile: rails_5x
-            bundler: default
           - ruby: 2.5.5
             gemfile: rails_5x
             bundler: default

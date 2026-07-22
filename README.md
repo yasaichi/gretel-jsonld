@@ -115,8 +115,8 @@ For further information, please see [gretel's documentation](https://github.com/
 Note that gretel-jsonld doesn't support all versions of gretel, Ruby and Rails:
 
 - gretel: gretel-jsonld supports **only 3.x** for now
-- Ruby: gretel 3.x supports **1.9.3 or later**, but gretel-jsonld does **only 2.2.2 or later**
-- Rails: gretel 3.x supports **3.1 or later**, but gretel-jsonld does **only 3.2 or later**
+- Ruby: gretel 3.x supports **1.9.3 or later**, but gretel-jsonld does **only 2.5 or later**
+- Rails: gretel 3.x supports **3.1 or later**, but gretel-jsonld does **only 5 or later**
 
 ## Contributing
 
