@@ -19,12 +19,14 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - ruby: 2.5.5
+          - ruby: "2.5"
             gemfile: rails_5x
-            bundler: default
-          - ruby: 2.6.3
-            gemfile: rails_5x
-            bundler: default
+          - ruby: "3.3"
+            gemfile: rails_6x
+          - ruby: "3.4"
+            gemfile: rails_7x
+          - ruby: "4.0"
+            gemfile: rails_8x
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
     steps:
@@ -33,14 +35,13 @@ jobs:
       - uses: ruby/setup-ruby@a30dfa457ad68707b8b910ac3a244714b61c0626 # v1.320.0
         with:
           ruby-version: ${{ matrix.ruby }}
-          bundler: ${{ matrix.bundler }}
           bundler-cache: true
 
       - name: Run tests
         run: bundle exec rake
 
       - name: Save coverage report
-        if: github.event_name == 'push' && matrix.ruby == '2.6.3'
+        if: github.event_name == 'push' && matrix.ruby == '4.0'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           include-hidden-files: true

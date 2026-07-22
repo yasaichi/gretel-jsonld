@@ -15,6 +15,13 @@
       "matchDepTypes": ["action"],
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["major"]
+    },
+    {
+      "description": "Enable all ruby/setup-ruby updates",
+      "enabled": true,
+      "matchDepTypes": ["action"],
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["ruby/setup-ruby"]
     }
   ]
 }
