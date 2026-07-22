@@ -2,7 +2,6 @@
 
 [![Gem Version](https://badge.fury.io/rb/gretel-jsonld.svg)](http://badge.fury.io/rb/gretel-jsonld)
 [![CI](https://github.com/yasaichi/gretel-jsonld/actions/workflows/ci.yml/badge.svg)](https://github.com/yasaichi/gretel-jsonld/actions/workflows/ci.yml)
-[![Maintainability](https://qlty.sh/gh/yasaichi/projects/gretel-jsonld/maintainability.svg)](https://qlty.sh/gh/yasaichi/projects/gretel-jsonld)
 [![Code Coverage](https://qlty.sh/gh/yasaichi/projects/gretel-jsonld/coverage.svg)](https://qlty.sh/gh/yasaichi/projects/gretel-jsonld)
 
 gretel-jsonld enables gretel gem to handle JSON-LD based breadcrumbs.
