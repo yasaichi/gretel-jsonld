@@ -18,7 +18,7 @@ module Gretel
           {
             "@context": "http://schema.org",
             "@type": "BreadcrumbList",
-            itemListElement: item_list_element,
+            itemListElement: item_list_element
           }.as_json(options)
         end
 

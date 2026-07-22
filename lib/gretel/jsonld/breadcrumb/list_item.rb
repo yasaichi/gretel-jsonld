@@ -21,7 +21,7 @@ module Gretel
             position: @position,
             item: {
               "@id": @id,
-              name: @name,
+              name: @name
             }
           }.as_json(options)
         end

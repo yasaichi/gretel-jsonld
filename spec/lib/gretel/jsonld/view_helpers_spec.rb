@@ -19,7 +19,7 @@ RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
         JSON.generate(
           "@context": "http://schema.org",
           "@type": "BreadcrumbList",
-          itemListElement: [{
+          itemListElement: [ {
             "@type": "ListItem",
             position: 1,
             item: {
@@ -34,7 +34,7 @@ RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
               "@id": "http://test.host/about",
               name: "About"
             }
-          }]
+          } ]
         )
       end
 
