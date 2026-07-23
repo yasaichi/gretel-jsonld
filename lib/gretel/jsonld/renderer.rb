@@ -19,7 +19,7 @@ module Gretel
 
         @view_context.content_tag(
           :script,
-          JSON.generate(to_breadcrumb_list(link_collection)).html_safe,
+          ::JSON.generate(to_breadcrumb_list(link_collection)).html_safe,
           type: "application/ld+json",
         )
       end
@@ -30,9 +30,10 @@ module Gretel
         ::URI.join(@view_context.request.base_url, uri_reference)
       end
 
+      # :reek:FeatureEnvy
       def to_breadcrumb_list(link_collection)
         link_collection
-          .select { |link, _| link.url }
+          .select(&:url)
           .map.with_index(1) { |link, position|
             ::Gretel::JSONLD::Breadcrumb::ListItem.new(
               position: position,
