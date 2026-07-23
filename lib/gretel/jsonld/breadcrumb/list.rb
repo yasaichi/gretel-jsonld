@@ -24,9 +24,9 @@ module Gretel
         def item_list_element
           @link_collection.map.with_index(1) do |link, index|
             ::Gretel::JSONLD::Breadcrumb::ListItem.new(
-              id: link.url,
-              name: link.text,
               position: index,
+              title: link.text,
+              url: link.url,
             )
           end
         end
