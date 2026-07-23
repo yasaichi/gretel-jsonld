@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
-require "json"
 require "active_support"
 require "active_support/core_ext/string/output_safety"
+require "json"
 require "gretel/jsonld/breadcrumb/list"
+require "gretel/jsonld/breadcrumb/list_item"
+require "uri"
 
 module Gretel
   module JSONLD
@@ -17,9 +19,27 @@ module Gretel
 
         @view_context.content_tag(
           :script,
-          JSON.generate(::Gretel::JSONLD::Breadcrumb::List.new(link_collection)).html_safe,
+          JSON.generate(to_breadcrumb_list(link_collection)).html_safe,
           type: "application/ld+json",
         )
+      end
+
+      private
+
+      def resolve_uri(uri_reference)
+        ::URI.join(@view_context.request.base_url, uri_reference)
+      end
+
+      def to_breadcrumb_list(link_collection)
+        link_collection
+          .select { |link, _| link.url }
+          .map.with_index(1) { |link, position|
+            ::Gretel::JSONLD::Breadcrumb::ListItem.new(
+              position: position,
+              title: link.text,
+              url: resolve_uri(link.url),
+            )
+          }.yield_self { |items| ::Gretel::JSONLD::Breadcrumb::List.new(items) }
       end
     end
   end

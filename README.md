@@ -62,7 +62,8 @@ Finally, specify a current breadcrumb in each view:
 <% breadcrumb :issue, @issue %>
 ```
 
-This will generate the following breadcrumbs, marked up with JSON-LD (indented for readability):
+For a request to `https://example.com/issues/46`, this will generate the
+following JSON-LD (indented for readability):
 
 ```html
 <script type="application/ld+json">
@@ -74,7 +75,7 @@ This will generate the following breadcrumbs, marked up with JSON-LD (indented f
         "@type": "ListItem",
         "position": 1,
         "item": {
-          "@id": "/",
+          "@id": "https://example.com/",
           "name": "Home"
         }
       },
@@ -82,7 +83,7 @@ This will generate the following breadcrumbs, marked up with JSON-LD (indented f
         "@type": "ListItem",
         "position": 2,
         "item": {
-          "@id": "/issues",
+          "@id": "https://example.com/issues",
           "name": "All issues"
         }
       },
@@ -90,7 +91,7 @@ This will generate the following breadcrumbs, marked up with JSON-LD (indented f
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "/issues/46",
+          "@id": "https://example.com/issues/46",
           "name": "My Issue"
         }
       }
@@ -118,6 +119,18 @@ Option                   | Description                                          
 Options concerned only with HTML presentation do not change the JSON-LD output. For example, `link_current` only controls whether the current crumb is rendered as an HTML link. The current crumb always includes `item.@id` in JSON-LD.
 
 For further information, please see [Gretel's documentation](https://github.com/kzkn/gretel#options).
+
+## Nice to know
+
+### Breadcrumb URLs
+
+Relative breadcrumb paths are resolved against the current request's base URL.
+Absolute breadcrumb URLs are used as-is.
+
+Breadcrumbs without link URLs are omitted from the JSON-LD output because each
+breadcrumb item is identified by `@id`, whose value must be an IRI reference
+under the
+[JSON-LD specification](https://www.w3.org/TR/json-ld11/#node-objects).
 
 ## Supported versions
 
