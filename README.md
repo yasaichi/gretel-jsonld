@@ -4,43 +4,42 @@
 [![CI](https://github.com/yasaichi/gretel-jsonld/actions/workflows/ci.yml/badge.svg)](https://github.com/yasaichi/gretel-jsonld/actions/workflows/ci.yml)
 [![Code Coverage](https://qlty.sh/gh/yasaichi/projects/gretel-jsonld/coverage.svg)](https://qlty.sh/gh/yasaichi/projects/gretel-jsonld)
 
-gretel-jsonld enables gretel gem to handle JSON-LD based breadcrumbs.
+gretel-jsonld enables [gretel](https://github.com/kzkn/gretel) to generate
+breadcrumbs using JSON-LD structured data.
 
 ## Installation
 
-Add this line to your application's `Gemfile`:
+In your `Gemfile`:
 
 ```ruby
-gem 'gretel-jsonld'
+gem "gretel-jsonld"
 ```
 
-And then execute:
+And run:
 
 ```bash
-$ bundle
+$ bundle install
 ```
 
-## Usage
+## Example
 
-First, run the installation generator with:
+Start by generating the breadcrumbs configuration file:
 
 ```sh
 $ rails generate gretel:install
 ```
 
-Next, define "crumbs" in `config/breadcrumbs.rb`:
+Then, in `config/breadcrumbs.rb`:
 
 ```ruby
-# See also: https://github.com/kzkn/gretel#more-examples
-
 # Root crumb
 crumb :root do
-  link 'Home', root_path
+  link "Home", root_path
 end
 
 # Issue list
 crumb :issues do
-  link 'All issues', issues_path
+  link "All issues", issues_path
 end
 
 # Issue
@@ -50,16 +49,17 @@ crumb :issue do |issue|
 end
 ```
 
-Then, add this line to your application's layout:
-
-```erb
-<%= jsonld_breadcrumbs %>
-```
-
-Finally, specify a current breadcrumb in each view:
+At the top of `app/views/issues/show.html.erb`, set the current breadcrumb
+(assuming you have loaded `@issue` with an issue):
 
 ```erb
 <% breadcrumb :issue, @issue %>
+```
+
+Then, in `app/views/layouts/application.html.erb`:
+
+```erb
+<%= jsonld_breadcrumbs %>
 ```
 
 For a request to `https://example.com/issues/46`, this will generate the
@@ -102,13 +102,13 @@ following JSON-LD (indented for readability):
 
 ## Options
 
-You can pass `jsonld_breadcrumbs` the same options as `breadcrumbs`.
+You can pass options to `<%= jsonld_breadcrumbs %>`, e.g.:
 
 ```erb
 <%= jsonld_breadcrumbs autoroot: false, link_current_to_request_path: false %>
 ```
 
-Options that change the breadcrumb collection also affect the JSON-LD output. The following options directly affect the output:
+Options that change the breadcrumb collection also affect the JSON-LD output:
 
 Option                   | Description                                                                                                                 | Default
 ------------------------ | --------------------------------------------------------------------------------------------------------------------------- | -------
@@ -116,9 +116,13 @@ Option                   | Description                                          
 :display_single_fragment | Whether it should output the `BreadcrumbList` if it includes only one item.                                                  | False
 :link_current_to_request_path | Whether the current crumb's `item.@id` in the `BreadcrumbList` should always use the current request path.                    | True
 
-Options concerned only with HTML presentation do not change the JSON-LD output. For example, `link_current` only controls whether the current crumb is rendered as an HTML link. The current crumb always includes `item.@id` in JSON-LD.
+Options concerned only with HTML presentation do not change the JSON-LD
+output. For example, `link_current` controls whether the current crumb is
+rendered as an HTML link, but the current crumb always includes `item.@id` in
+JSON-LD.
 
-For further information, please see [Gretel's documentation](https://github.com/kzkn/gretel#options).
+For further information, please see
+[Gretel's documentation](https://github.com/kzkn/gretel#options).
 
 ## Nice to know
 
@@ -143,11 +147,11 @@ The supported version ranges are:
 | 4.x | 5.1 through 7.1 | 2.5 or later |
 | 5.x | 6.1 or later | 3.0 or later |
 
-CI tests the latest releases in the lowest and current highest Rails majors for each gretel major.
+CI covers the lowest and highest supported Rails majors for each gretel major.
 
 ## Contributing
 
-You should follow the steps below:
+To contribute:
 
 1. [Fork the repository](https://help.github.com/articles/fork-a-repo/)
 2. Create a feature branch: `git checkout -b add-new-feature`

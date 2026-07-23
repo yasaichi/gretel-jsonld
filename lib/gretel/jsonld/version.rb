@@ -2,6 +2,6 @@
 
 module Gretel
   module JSONLD
-    VERSION = "0.3.0".freeze
+    VERSION = "1.0.0.rc1".freeze
   end
 end
