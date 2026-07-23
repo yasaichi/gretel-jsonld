@@ -3,7 +3,7 @@
 require "action_view"
 require "gretel/jsonld/version"
 
-if defined?(Rails)
+if defined?(Rails::Railtie)
   require "gretel/jsonld/railtie"
 else
   require "gretel/jsonld/view_helpers"
