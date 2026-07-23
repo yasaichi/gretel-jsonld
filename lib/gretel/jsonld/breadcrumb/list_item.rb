@@ -6,18 +6,20 @@ module Gretel
   module JSONLD
     module Breadcrumb
       class ListItem
-        def initialize(position:, title:, url:)
+        def initialize(id:, name:, position:)
+          @id = id
+          @name = name
           @position = position
-          @title = title
-          @url = url
         end
 
         def to_json(*args)
           {
             "@type": "ListItem",
             position: @position,
-            name: @title,
-            item: @url
+            item: {
+              "@id": @id,
+              name: @name
+            }
           }.to_json(*args)
         end
       end

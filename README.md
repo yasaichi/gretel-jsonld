@@ -73,20 +73,26 @@ This will generate the following breadcrumbs, marked up with JSON-LD (indented f
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
-        "item": "/"
+        "item": {
+          "@id": "/",
+          "name": "Home"
+        }
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "All issues",
-        "item": "/issues"
+        "item": {
+          "@id": "/issues",
+          "name": "All issues"
+        }
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "My Issue",
-        "item": "/issues/46"
+        "item": {
+          "@id": "/issues/46",
+          "name": "My Issue"
+        }
       }
     ]
   }
@@ -101,7 +107,7 @@ You can pass `jsonld_breadcrumbs` the same options as `breadcrumbs`:
 <%= jsonld_breadcrumbs link_current_to_request_path: false %>
 ```
 
-For further information, please see [gretel's documentation](https://github.com/kzkn/gretel/blob/main/README.md#options).
+For further information, please see [gretel's documentation](https://github.com/WilHall/gretel/blob/develop/README.md#options).
 
 ## Supported versions
 
