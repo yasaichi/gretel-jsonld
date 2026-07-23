@@ -35,7 +35,7 @@ RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
               "@type": "ListItem",
               position: 2,
               item: {
-                "@id": "http://test.host/about",
+                "@id": "http://test.host/about?foo=bar",
                 name: "About"
               }
             }
@@ -67,7 +67,7 @@ RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
                   "@type": "ListItem",
                   position: 1,
                   item: {
-                    "@id": "http://test.host/about",
+                    "@id": "http://test.host/about?foo=bar",
                     name: "About"
                   }
                 }
@@ -127,8 +127,6 @@ RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
         context "when set to true" do
           let(:link_current_to_request_path) { true }
 
-          # TODO: Convert this relative request path to an absolute URL. Google reports
-          # it as a non-critical `Invalid URL in field "id"` issue.
           let(:expectation) do
             {
               "@context": "http://schema.org",
@@ -146,7 +144,7 @@ RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
                   "@type": "ListItem",
                   position: 2,
                   item: {
-                    "@id": "/requested",
+                    "@id": "http://test.host/requested",
                     name: "About"
                   }
                 }
