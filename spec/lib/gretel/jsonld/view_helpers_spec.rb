@@ -22,18 +22,14 @@ RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
           itemListElement: [ {
             "@type": "ListItem",
             position: 1,
-            item: {
-              "@id": "http://test.host/",
-              name: "Home"
-            }
+            name: "Home",
+            item: "http://test.host/"
           },
           {
             "@type": "ListItem",
             position: 2,
-            item: {
-              "@id": "http://test.host/about",
-              name: "About"
-            }
+            name: "About",
+            item: "http://test.host/about"
           } ]
         )
       end
