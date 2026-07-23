@@ -31,7 +31,7 @@ $ rails generate gretel:install
 Next, define "crumbs" in `config/breadcrumbs.rb`:
 
 ```ruby
-# See also: https://github.com/lassebunk/gretel#more-examples
+# See also: https://github.com/kzkn/gretel#more-examples
 
 # Root crumb
 crumb :root do
@@ -101,13 +101,23 @@ This will generate the following breadcrumbs, marked up with JSON-LD (indented f
 
 ## Options
 
-You can pass `jsonld_breadcrumbs` the same options as `breadcrumbs`:
+You can pass `jsonld_breadcrumbs` the same options as `breadcrumbs`.
 
 ```erb
-<%= jsonld_breadcrumbs link_current_to_request_path: false %>
+<%= jsonld_breadcrumbs autoroot: false, link_current_to_request_path: false %>
 ```
 
-For further information, please see [gretel's documentation](https://github.com/WilHall/gretel/blob/develop/README.md#options).
+Options that change the breadcrumb collection also affect the JSON-LD output. The following options directly affect the output:
+
+Option                   | Description                                                                                                                 | Default
+------------------------ | --------------------------------------------------------------------------------------------------------------------------- | -------
+:autoroot                | Whether it should automatically add the `:root` crumb to the `BreadcrumbList` if no parent is given.                       | True
+:display_single_fragment | Whether it should output the `BreadcrumbList` if it includes only one item.                                                  | False
+:link_current_to_request_path | Whether the current crumb's `item.@id` in the `BreadcrumbList` should always use the current request path.                    | True
+
+Options concerned only with HTML presentation do not change the JSON-LD output. For example, `link_current` only controls whether the current crumb is rendered as an HTML link. The current crumb always includes `item.@id` in JSON-LD.
+
+For further information, please see [Gretel's documentation](https://github.com/kzkn/gretel#options).
 
 ## Supported versions
 
