@@ -12,7 +12,7 @@ module Gretel
 
         def to_json(*args)
           {
-            "@context": "http://schema.org",
+            "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: @items
           }.to_json(*args)
