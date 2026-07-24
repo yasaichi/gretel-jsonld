@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [1.0.0.rc2](https://github.com/yasaichi/gretel-jsonld/releases/tag/v1.0.0.rc2) (July 24, 2026)
+
+* [Use HTTPS for Schema.org context](https://github.com/yasaichi/gretel-jsonld/pull/32)
+
 ## [1.0.0.rc1](https://github.com/yasaichi/gretel-jsonld/releases/tag/v1.0.0.rc1) (July 23, 2026)
 
 * [Generate valid breadcrumb item URLs](https://github.com/yasaichi/gretel-jsonld/pull/28)
