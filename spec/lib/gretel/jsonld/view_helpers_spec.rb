@@ -20,7 +20,7 @@ RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
     context "when #breadcrumb is called in advance" do
       let(:full_list) do
         {
-          "@context": "http://schema.org",
+          "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
             {
@@ -60,7 +60,7 @@ RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
           let(:autoroot) { false }
           let(:expectation) do
             {
-              "@context": "http://schema.org",
+              "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
                 {
@@ -92,7 +92,7 @@ RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
           let(:display_single_fragment) { true }
           let(:expectation) do
             {
-              "@context": "http://schema.org",
+              "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
                 {
@@ -129,7 +129,7 @@ RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
 
           let(:expectation) do
             {
-              "@context": "http://schema.org",
+              "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
                 {

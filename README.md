@@ -68,7 +68,7 @@ following JSON-LD (indented for readability):
 ```html
 <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       {
