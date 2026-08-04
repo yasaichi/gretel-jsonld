@@ -162,6 +162,30 @@ RSpec.describe Gretel::JSONLD::ViewHelpers, type: :helper do
 
         it { is_expected.to eq(full_list) }
       end
+
+      describe "XSS prevention" do
+        let(:options) { { autoroot: false, display_single_fragment: true } }
+        let(:breadcrumb_key) { :with_xss_payload }
+
+        let(:expectation) do
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                item: {
+                  "@id": "http://test.host/xss",
+                  name: "</script><script>alert(1)</script>"
+                }
+              }
+            ]
+          }
+        end
+
+        it { is_expected.to eq(expectation) }
+      end
     end
   end
 end
