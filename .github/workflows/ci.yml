@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - 0-3-stable
   pull_request:
     branches:
       - main
+      - 0-3-stable
 
 permissions:
   contents: read
