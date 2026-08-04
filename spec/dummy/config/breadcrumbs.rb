@@ -7,6 +7,10 @@ crumb :without_link do
 end
 
 crumb :with_root do
-  link "About", about_path(foo: 'bar')
+  link "About", about_path(foo: "bar")
   parent :without_link
+end
+
+crumb :with_xss_payload do
+  link "</script><script>alert(1)</script>", "/xss"
 end
