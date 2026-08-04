@@ -3,5 +3,9 @@ crumb :root do
 end
 
 crumb :with_root do
-  link "About", about_url
+  link "About", about_url(foo: "bar")
+end
+
+crumb :with_xss_payload do
+  link "</script><script>alert(1)</script>", "/xss"
 end
