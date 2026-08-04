@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [1.0.0.rc3](https://github.com/yasaichi/gretel-jsonld/releases/tag/v1.0.0.rc3) (August 4, 2026)
+
+* [Prevent XSS in JSON-LD breadcrumb output](https://github.com/yasaichi/gretel-jsonld/pull/36)
+
 ## [1.0.0.rc2](https://github.com/yasaichi/gretel-jsonld/releases/tag/v1.0.0.rc2) (July 24, 2026)
 
 * [Use HTTPS for Schema.org context](https://github.com/yasaichi/gretel-jsonld/pull/32)
