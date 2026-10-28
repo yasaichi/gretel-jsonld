@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [1.0.0](https://github.com/yasaichi/gretel-jsonld/releases/tag/v1.0.0) (October 28, 2026)
+
+* First stable 1.0 release, with no functional changes since 1.0.0.rc3.
+
 ## [1.0.0.rc3](https://github.com/yasaichi/gretel-jsonld/releases/tag/v1.0.0.rc3) (August 4, 2026)
 
 * [Prevent XSS in JSON-LD breadcrumb output](https://github.com/yasaichi/gretel-jsonld/pull/36)
